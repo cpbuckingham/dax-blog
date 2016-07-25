@@ -1,9 +1,7 @@
 var express        = require('express'),
     app            = express(),
     bodyParser     = require('body-parser'),
-    methodOverride = require('method-override'),
-    index          = require('routes/index');
-
+    methodOverride = require('method-override');
 
 // --- Middleware --- //
 app.use(bodyParser.json())
@@ -14,9 +12,11 @@ app.use(bodyParser.json())
 
 // --- Routing --- //
 
-app.use('/', index);
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + "/public/views/index.html")
+});
 
 // --- Server --- //
 app.listen(3000, () => {
   console.log('Server is listening.');
-})
+});
