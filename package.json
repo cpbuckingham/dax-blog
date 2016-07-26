@@ -17,6 +17,7 @@
     "express": "^4.14.0",
     "knex": "^0.11.9",
     "locus": "^1.2.0",
-    "method-override": "^2.3.6"
+    "method-override": "^2.3.6",
+    "pg": "^6.0.3"
   }
 }
