@@ -28,7 +28,7 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection:{
-      database:
+      database:process.env.HEROKU_POSTGRESQL_COBALT_URL
     }
 
 };
