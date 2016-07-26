@@ -1,3 +1,72 @@
+body {
+  background-color: #2e3532;
+  color: #e2e2e2; }
+  body main {
+    padding: 10px;
+    clear: both; }
 
+header {
+  background-color: #222;
+  position: fixed;
+  width: 100%; }
+  header nav {
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 10px #111; }
+    header nav .brand {
+      width: 50%; }
+      header nav .brand h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 3em;
+        font-weight: 100;
+        padding: 5px;
+        margin: 0; }
+    header nav .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      float: right;
+      text-align: right; }
+      header nav .links h3 {
+        font-family: "Play", sans-serif;
+        padding: 0;
+        margin: 0;
+        transition: .75s all ease;
+        cursor: default; }
+        header nav .links h3:hover {
+          color: #8c4751; }
+
+.post-index, .about-index {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.blog-post {
+  margin: 15px;
+  padding: 5px;
+  width: 70%;
+  background-color: #8c4751;
+  box-shadow: 0 10px 10px #222; }
+  .blog-post h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;
+    margin: 0;
+    font-size: 3em; }
+  .blog-post .blog-body {
+    margin: 15px; }
+
+.about-index .about-container {
+  width: 60%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row; }
+  .about-index .about-container div {
+    width: 50%; }
+
+pre {
+  font-family: "Play", sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

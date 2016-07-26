@@ -1,7 +1,7 @@
 var express = require('express'),
     router  = express.Router();
 
-router.route('/')
+router.route('*')
   .get((req, res) => {
     res.sendFile('index.html', {root: './public/views'});
   })

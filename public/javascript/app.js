@@ -1,6 +1,6 @@
 (function(){
   angular
-    .module('blogApp',['ngRoute','blogFactory', 'index'])
+    .module('blogApp',['ngRoute','blogFactory','navbarDirective', 'index', 'about'])
     .config(routeConfig)
 
   routeConfig.$inject = ['$routeProvider','$locationProvider'];
@@ -17,6 +17,16 @@
       enabled:true,
       requireBase:false
     });
+  }
+
+
+  // Misc
+  window.onload = function(){
+    var navbar = document.getElementById('navbar'),
+    height = navbar.clientHeight;
+    console.log(height);
+    document.getElementById('main').style.paddingTop += height * 5;
+
   }
 
 })();

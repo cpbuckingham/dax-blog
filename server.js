@@ -14,8 +14,8 @@ app.use(bodyParser.json())
 
 // --- Routing --- //
 
-app.use('/', index)
-  .use('/api', api);
+app.use('/api', api)
+  .use('/', index);
 
 // --- Server --- //
 app.listen(3000, () => {

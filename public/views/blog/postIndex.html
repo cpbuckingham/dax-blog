@@ -1,9 +1,9 @@
 <section class="post-index">
-  <h1>Posts</h1>
-
-  <div ng-repeat="post in index.posts">
+  <div ng-repeat="post in index.posts" class='blog-post'>
     <h2>{{ post.blog_title }}</h2>
-    <p>{{ post.blog_body }}</p>
-    <pre>Posted at {{ post.created_at | date:fullDate}}</pre>
+    <div class="blog-body">
+      <p>{{ post.blog_body }}</p>
+      <pre>&lt; Posted at {{ post.created_at | date:fullDate}} &#47;&gt;</pre>
+    </div>
   </div>
 </section>
