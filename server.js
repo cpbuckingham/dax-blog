@@ -5,6 +5,8 @@ var express        = require('express'),
     index          = require('./routes/index'),
     api            = require('./routes/api');
 
+require('dotenv');
+
 // --- Middleware --- //
 app.use(bodyParser.json())
   .use(bodyParser.urlencoded({extended:false}))
@@ -18,6 +20,6 @@ app.use('/api', api)
   .use('/', index);
 
 // --- Server --- //
-app.listen(3000, () => {
+app.listen(3000 || process.env.PORT, () => {
   console.log('Server is listening.');
 });
