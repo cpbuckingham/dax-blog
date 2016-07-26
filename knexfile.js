@@ -1,5 +1,7 @@
 // Update with your config settings.
 
+const URL_CONN = `${process.env.HEROKU_POSTGRESQL_COBALT_URL}?ssl=true`
+
 module.exports = {
 
   development: {
@@ -26,13 +28,13 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection:{
-      database:process.env.HEROKU_POSTGRESQL_COBALT_URL
+      database:URL_CONN
     },
     pool: {
-      min: 0,
-      max: 7
+      min: 2,
+      max: 10
     },
     migrations: {
       tableName: 'knex_migrations'
