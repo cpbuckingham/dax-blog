@@ -29,6 +29,10 @@ module.exports = {
     client: 'postgresql',
     connection:{
       database:process.env.HEROKU_POSTGRESQL_COBALT_URL
+    },
+    pool: {
+      min: 0,
+      max: 7
     }
   }
 }
