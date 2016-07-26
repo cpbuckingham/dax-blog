@@ -96,6 +96,12 @@ header {
 .about-index {
   @extend .post-index;
 
+  h1 {
+    font-family: $name;
+    font-weight: 100;
+    font-size: 3em;
+  }
+
   .about-container{
     width:60%;
     box-sizing: border-box;
@@ -104,6 +110,7 @@ header {
 
     div {
       width:50%;
+      padding:5px;
     }
   }
 }

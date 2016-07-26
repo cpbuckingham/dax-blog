@@ -59,13 +59,18 @@ header {
   .blog-post .blog-body {
     margin: 15px; }
 
+.about-index h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size: 3em; }
 .about-index .about-container {
   width: 60%;
   box-sizing: border-box;
   display: flex;
   flex-direction: row; }
   .about-index .about-container div {
-    width: 50%; }
+    width: 50%;
+    padding: 5px; }
 
 pre {
   font-family: "Play", sans-serif; }
