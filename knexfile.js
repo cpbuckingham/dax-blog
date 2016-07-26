@@ -30,5 +30,5 @@ module.exports = {
     connection:{
       database:process.env.HEROKU_POSTGRESQL_COBALT_URL
     }
-
-};
+  }
+}
