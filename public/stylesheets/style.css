@@ -1,5 +1,5 @@
 body {
-  background-color: #2e3532;
+  background-color: #2e2828;
   color: #e2e2e2; }
   body main {
     padding: 10px;
@@ -33,10 +33,7 @@ header {
         font-family: "Play", sans-serif;
         padding: 0;
         margin: 0;
-        transition: .75s all ease;
         cursor: default; }
-        header nav .links h3:hover {
-          color: #8c4751; }
 
 .post-index, .about-index {
   width: 100%;
@@ -48,8 +45,12 @@ header {
   margin: 15px;
   padding: 5px;
   width: 70%;
-  background-color: #8c4751;
-  box-shadow: 0 10px 10px #222; }
+  background-color: rgba(239, 239, 239, 0.75);
+  color: #2e2828;
+  box-shadow: 0 10px 10px #222;
+  transition: .75s all ease; }
+  .blog-post:hover {
+    background-color: #efefef; }
   .blog-post h2 {
     font-family: "Raleway", sans-serif;
     font-weight: 100;
@@ -68,5 +69,12 @@ header {
 
 pre {
   font-family: "Play", sans-serif; }
+
+a {
+  text-decoration: none;
+  transition: .75s all ease;
+  color: #e2e2e2; }
+  a:hover {
+    color: #8c4751; }
 
 /*# sourceMappingURL=style.css.map */

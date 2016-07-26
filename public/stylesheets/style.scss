@@ -1,9 +1,11 @@
 // Inital Colors
-$color1: rgba(46, 53, 50, 1);
+$color1: rgba(46, 40, 40, 1);
 $color2: rgba(140, 71, 81, 1);
 $color3: rgba(226, 226, 226, 1);
 $color4: rgba(211, 211, 211, 1);
 $color5: rgba(239, 239, 239, 1);
+$color6: rgba(239, 239, 239, .75);
+$color7: rgba(239, 239, 239, 1);
 
 $name: 'Raleway', sans-serif;
 $code: 'Play', sans-serif;
@@ -50,12 +52,7 @@ header {
         font-family: $code;
         padding:0;
         margin:0;
-        transition: .75s all ease;
         cursor: default;
-
-        &:hover {
-          color:$color2;
-        }
       }
     }
   }
@@ -73,8 +70,14 @@ header {
   margin:15px;
   padding:5px;
   width:70%;
-  background-color:$color2;
+  background-color: $color6;
+  color:$color1;
   box-shadow: 0 10px 10px #222;
+  transition: .75s all ease;
+
+  &:hover {
+    background-color: $color7;
+  }
 
   h2 {
     font-family: $name;
@@ -107,4 +110,13 @@ header {
 
 pre {
   font-family: $code;
+}
+
+a {
+  text-decoration: none;
+  transition: .75s all ease;
+  color:$color3;
+  &:hover{
+    color:$color2;
+  }
 }
