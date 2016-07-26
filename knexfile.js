@@ -5,7 +5,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      connection: 'dax_blog'
+      database: 'dax_blog'
     }
   },
 
