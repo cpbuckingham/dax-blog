@@ -1,1 +1,9 @@
-<h1>{{index.greeting}}.</h1>
+<section class="post-index">
+  <h1>Posts</h1>
+
+  <div ng-repeat="post in index.posts">
+    <h2>{{ post.blog_title }}</h2>
+    <p>{{ post.blog_body }}</p>
+    <pre>Posted at {{ post.created_at | date:fullDate}}</pre>
+  </div>
+</section>

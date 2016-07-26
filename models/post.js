@@ -1,13 +1,13 @@
 var bookshelf = require('../db/bookshelf');
 
 var Post = bookshelf.Model.extend({
-  tableName:'posts'
+  tableName:'blogs'
 })
 
 Post.getAll = function(){
   return new Promise((resolve, reject) => {
     Post.fetchAll().then(results => {
-      resolve(results);
+      resolve(results)
     })
   })
 }

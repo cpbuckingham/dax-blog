@@ -1,6 +1,6 @@
 (function(){
   angular
-    .module('blogFactory')
+    .module('blogFactory',[])
     .factory('Blogs', Blogs)
 
   Blogs.$inject = ['$http'];
@@ -10,13 +10,13 @@
       getPosts: getPosts
     }
 
+    return blogMethods;
+
     function getPosts(){
-      http({
+      return $http({
         method:'get',
         url:'/api/posts'
-      }).success(results => {
-        console.log(results.data);
-      })
+      });
     }
   }
 })();

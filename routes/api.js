@@ -1,10 +1,12 @@
 var express = require('express'),
-    router  = express.Router();
+    router  = express.Router(),
+    Post    = require('../models/post');
 
-require('../models/post');
 
 router.route('/posts')
   .get((req, res) => {
-    Post.getAll().then(results=>{res.json(results.toJSON())});
+    Post.getAll().then(results =>{
+      res.send(results.toJSON());
+    });
   });
 module.exports = router;
