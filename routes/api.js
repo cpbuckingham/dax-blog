@@ -3,7 +3,7 @@ var express = require('express'),
 
 require('../models/post');
 
-router.route('/')
+router.route('/posts')
   .get((req, res) => {
     Post.getAll().then(results=>{res.json(results.toJSON())});
   });

@@ -1,12 +1,12 @@
 var express = require('express'),
     router  = express.Router();
 
-router.route('*')
+router.route('/')
   .get((req, res) => {
-    res.sendFile(__dirname + '/public/views/index.html');
-  });
+    res.sendFile('index.html', {root: './public/views'});
+  })
   .post((req, res) => {
-    res.sendFile(__dirname + '/public/views/index.html');
+    res.sendFile('index.html', {root: './public/views'});
   });
 
 
