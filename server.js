@@ -2,6 +2,7 @@ var express        = require('express'),
     app            = express(),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
+    bookshelf      =
     index          = require('./routes/index'),
     api            = require('./routes/api');
 
