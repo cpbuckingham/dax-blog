@@ -34,6 +34,16 @@ describe('#Post Routes', () => {
       .end((err, res) => {
         (typeof res.body).should.equal('object');
         done();
-      })
-  })
-})
+      });
+  });
+
+  it('Should not return a post.', done => {
+    server
+      .get('/api/posts/0')
+      .expect('Content-type',/json/)
+      .expect(500)
+      .end((err, res) => {
+        done();
+      });
+  });
+});
