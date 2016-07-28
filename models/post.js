@@ -7,7 +7,6 @@ var Post = bookshelf.Model.extend({
 Post.getAll = function(){
   return new Promise((resolve, reject) => {
     Post.fetchAll().then(results => {
-      console.log('What up.');
       resolve(results)
     })
   })

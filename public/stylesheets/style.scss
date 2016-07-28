@@ -6,6 +6,7 @@ $color4: rgba(211, 211, 211, 1);
 $color5: rgba(239, 239, 239, 1);
 $color6: rgba(239, 239, 239, .75);
 $color7: rgba(239, 239, 239, 1);
+$color8: rgba(70, 50, 50, 1);
 
 $name: 'Raleway', sans-serif;
 $code: 'Play', sans-serif;
@@ -74,6 +75,10 @@ header {
   color:$color1;
   box-shadow: 0 10px 10px #222;
   transition: .75s all ease;
+
+  a {
+    color: $color2;
+  }
 
   &:hover {
     background-color: $color7;

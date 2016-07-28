@@ -3,7 +3,7 @@
     <h2>{{ post.blog_title }}</h2>
     <div class="blog-body">
       <p>{{ post.blog_body }}</p>
-      <pre><a ng-href="/blog/{{post.id}}">&lt; Posted at {{ post.created_at | date:fullDate}} &#47;&gt;</a></pre>
+      <pre>&lt; <a ng-href="/blog/{{post.id}}">Posted at {{ post.created_at | date:fullDate}}</a> &#47;&gt;</pre>
     </div>
   </div>
 </section>
