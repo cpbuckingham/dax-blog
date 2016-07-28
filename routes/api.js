@@ -8,5 +8,14 @@ router.route('/posts')
     Post.getAll().then(results =>{
       res.send(results.toJSON());
     });
+  })
+  .post((req, res) => {
+    // Handle posting a new blog post.
   });
+
+router.route('/posts/:post_id')
+  .get((req, res) => {
+    
+  })
+
 module.exports = router;
