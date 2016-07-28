@@ -1,7 +1,7 @@
 (function(){
   angular
     .module('showPost', [])
-    .router(routeConfig)
+    .config(routeConfig)
     .controller('ShowPostController', ShowPostController)
 
     routeConfig.$inject = ['$routeProvider', '$locationProvider'];

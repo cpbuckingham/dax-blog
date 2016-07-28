@@ -1,6 +1,6 @@
 (function(){
   angular
-    .module('blogApp',['ngRoute','blogFactory','navbarDirective', 'index', 'about'])
+    .module('blogApp',['ngRoute','blogFactory','navbarDirective', 'index', 'about','showPost'])
     .config(routeConfig)
 
   routeConfig.$inject = ['$routeProvider','$locationProvider'];
