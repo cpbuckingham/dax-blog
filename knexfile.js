@@ -1,6 +1,6 @@
 // Update with your config settings.
 
-const URL_CONN = `${process.env.HEROKU_POSTGRESQL_COBALT_URL}?ssl=true`
+
 
 module.exports = {
 
@@ -30,7 +30,7 @@ module.exports = {
   production: {
     client: 'pg',
     connection:{
-      database:URL_CONN
+      database:DATABASE_URL
     },
     pool: {
       min: 2,
