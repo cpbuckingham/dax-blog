@@ -7,7 +7,8 @@
 
   function Blogs($http){
     var blogMethods = {
-      getPosts: getPosts
+      getPosts: getPosts,
+      returnPost: returnPost
     }
 
     return blogMethods;
@@ -16,6 +17,13 @@
       return $http({
         method:'get',
         url:'/api/posts'
+      });
+    }
+
+    function returnPost(post_id){
+      return $http({
+        method:'get',
+        url:`/api/posts/${post_id}`
       });
     }
   }

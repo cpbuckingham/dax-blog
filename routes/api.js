@@ -15,9 +15,9 @@ router.route('/posts')
 
 router.route('/posts/:post_id')
   .get((req, res) => {
-    Post.where('id',req.params.post_id).fetch().then( results => {
-      res.send(results.toJSON());
-    });
+    Post.getOne(req.params.post_id).then( results => {
+      res.json(results.toJSON());
+    })
   })
 
 module.exports = router;

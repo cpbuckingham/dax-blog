@@ -12,4 +12,15 @@ Post.getAll = function(){
   })
 }
 
+Post.getOne = function(post_id){
+  return new Promise((resolve, reject) => {
+    Post
+      .where('id', post_id)
+      .fetch()
+      .then( results => {
+        resolve(results);
+      })
+  })
+}
+
 module.exports = bookshelf.model('Post', Post)
