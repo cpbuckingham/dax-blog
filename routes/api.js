@@ -3,6 +3,8 @@ var express = require('express'),
     Post    = require('../models/post');
 
 
+//
+
 router.route('/posts')
   .get((req, res) => {
     Post.getAll().then(results =>{
