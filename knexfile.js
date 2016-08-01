@@ -11,6 +11,13 @@ module.exports = {
     }
   },
 
+  test: {
+    client:'postgresql',
+    connection: {
+      database: 'dax_blog_test'
+    }
+  },
+
   staging: {
     client: 'postgresql',
     connection: {
