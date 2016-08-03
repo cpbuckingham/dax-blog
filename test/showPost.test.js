@@ -43,7 +43,10 @@ describe('#Post Routes', () => {
       .get('/api/posts')
       .expect(200)
       .end((err, res) => {
-        ()
+        var post = res.body;
+        expect(res.body.length).to.eq(3);
+        (post[0]).should.have.property('blog_title', 'Seed Title 1');
+        (post[0]).should.have.property('blog_body', 'Seed Post 1');
         done();
       })
   })
@@ -53,15 +56,6 @@ describe('#Post Routes', () => {
       .get('/api/posts/1')
       .expect('Content-type',/json/)
       .expect(200)
-      .end((err, res) => {
-        done();
-      });
-  });
-
-  it('Should not return a post.', done => {
-    request
-      .get('/api/posts/0')
-      .expect(500)
       .end((err, res) => {
         done();
       });
