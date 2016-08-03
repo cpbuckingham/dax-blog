@@ -28,5 +28,16 @@ router.route('/posts/:post_id')
       res.json(results.toJSON());
     })
   })
-
+  .put((req, res) => {
+    Post.forge('id',req.params.post_id)
+      .fetch({require:true})
+      .then(post => {
+        post.save({
+          blog_title:req.body.blog_title,
+          blog_body:req.body.blog_body
+        }).then( results => {
+          res.json(results.toJSON());
+        })
+      })
+  })
 module.exports = router;

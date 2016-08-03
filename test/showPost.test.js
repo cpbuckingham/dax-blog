@@ -104,4 +104,15 @@ describe('Route Test', () => {
         })
     })
   });
+
+  it('Should delete an existing blog.', done => {
+    request
+      .delete('/api/posts/3')
+      .expect(200)
+      .end((err, res) => {
+        var post = res.body;
+        console.log(post);
+        done();
+      })
+  })
 });
