@@ -1,18 +1,28 @@
 var supertest = require('supertest'),
     should    = require('should'),
-    server    = supertest.agent('http://localhost:3000');
+    server    = supertest.agent('http://localhost:3000'),
+    knex      = require('../db/knex');
 
 
 
 
 describe('#Index Route', () => {
-  before(){
-    // Start server?
-  }
+  before(done => {
+    knex.migrate.latest()
+      .then( results => {
+        knex.seed.run()
+          .then (results => {
+            done();
+          })
+      })
+  })
 
-  after(){
-    // End server.
-  }
+  after(done => {
+    knex.migrate.rollback()
+      .then( results => {
+        done();
+      })
+  })
 
   it('Should return home page.', done => {
     server
