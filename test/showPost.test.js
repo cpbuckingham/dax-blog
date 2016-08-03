@@ -73,13 +73,12 @@ describe('Route Test', () => {
         .send(newPost)
         .end((err, res) => {
           request
-            .get(`/api/posts/${res.body}`)
+            .get(`/api/posts/${res.body.id}`)
             .expect(200)
             .end((err, res) => {
               var post = res.body;
-
               (post).should.have.property('blog_title', 'Test');
-              (post).should.have.property('blog_post', 'Test');
+              (post).should.have.property('blog_body', 'Test');
               done();
             });
         });
