@@ -65,7 +65,7 @@ describe('Route Test', () => {
     });
 
     it('Should post a new blog.', done => {
-      var newPost = {blog_title:'Test', blog_body:'Test'}
+      var newPost = {blog_title:'Test', blog_body:'Test'};
 
       request
         .post('/api/posts')
@@ -83,5 +83,25 @@ describe('Route Test', () => {
             });
         });
     });
+
+    it('Should edit an existing blog.', done => {
+      var editPost = {blog_title:'Test', blog_body:'Test'};
+
+      request
+        .put('/api/posts/1')
+        .expect(200)
+        .send(editPost)
+        .end((err, res) => {
+          request
+            .get('/api/posts/1')
+            .expect(200)
+            .end((err, res) => {
+              var post = res.body;
+              (post).should.have.property('blog_title', 'Test');
+              (post).should.have.property('blog_body', 'Test');
+              done();
+            })
+        })
+    })
   });
 });
