@@ -5,13 +5,11 @@ var express = require('express'),
 
 router.route('/posts')
   .get((req, res) => {
-    Post.getAll().then(results =>{
-      res.send(results.toJSON());
-    });
+    Post.getAll().then(results => {
+      res.json(results.toJSON());
+    })
   })
-  .post((req, res) => {
-    // Handle posting a new blog post.
-  });
+
 
 router.route('/posts/:post_id')
   .get((req, res) => {
