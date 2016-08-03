@@ -111,7 +111,7 @@ describe('Route Test', () => {
       .expect(200)
       .end((err, res) => {
         var post = res.body;
-        console.log(post);
+        console.log(post, 'Delete route.');
         done();
       })
   })

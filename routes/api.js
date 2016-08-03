@@ -40,4 +40,13 @@ router.route('/posts/:post_id')
         })
       })
   })
+  .delete((req, res) => {
+    Post.getOne(req.params.post_id)
+      .then( post => {
+        post.destroy()
+          .then( results => {
+            res.json(results.toJSON());
+          })
+      })
+  })
 module.exports = router;
