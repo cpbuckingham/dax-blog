@@ -4,7 +4,8 @@
     .config(routeConfig)
     .controller('LoginController', LoginController)
 
-  LoginController.$inject = []
+
+  routeConfig.$inject = ['$routeProvider', '$locationProvider'];
 
   function routeConfig($routeProvider, $locationProvider){
     $routeProvider
