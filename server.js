@@ -3,12 +3,13 @@ var express        = require('express'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
     passport       = require('passport'),
-    passportLocal  = require('passport-local'),
+    LocalStrategy  = require('passport-local').Strategy,
     bcrypt         = require('bcrypt'),
     cookieSession  = require('cookie-session'),
     index          = require('./routes/index'),
     api            = require('./routes/api'),
-    auth           = require('./routes/auth');
+    auth           = require('./routes/auth'),
+    User           = require('./models/user');
 
 require('dotenv');
 
@@ -26,8 +27,8 @@ passport.use(new LocalStrategy({
 	session: false
 }, (username, password, done) => {
 	// Check id of user, retrieve row in users table.
-	Users().where('username', username)
-		.first()
+	User.where('username', username)
+		.fetch()
 		.then( user => {
 			// compareSync the user's hashed password.
 			if (user && bcrypt.compareSync(password, user.password)){

@@ -20,8 +20,8 @@ exports.seed = function(knex, Promise) {
       ]);
     }).then(function(){
       return knex('users').insert({
-        full_name:'Dax Richardson',
-        username: 'Gromkii',
+        full_name:'Some Dude',
+        username: 'tester',
         img_url:'http://fillmurray.com/200/200',
         password:'$2a$08$bjOFersE7D36g2SPn77AsO5OK/EIjqPjHKBV4wUzJvv8XqCeMltTu' // 8 hash, daxdax
       })

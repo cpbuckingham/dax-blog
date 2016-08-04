@@ -1,8 +1,8 @@
-var expect = require('chai').expect;
-var app = require('../server')
-var request = require('supertest')(app);
-var knex = require('../db/knex');
-var should = require('should');
+var expect  = require('chai').expect,
+    app     = require('../server'),
+    request = require('supertest')(app),
+    knex    = require('../db/knex'),
+    should  = require('should');
 
 
 describe('Route Test', () => {
