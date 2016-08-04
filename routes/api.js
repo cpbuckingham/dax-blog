@@ -41,6 +41,7 @@ router.route('/posts/:post_id')
       })
   })
   .delete((req, res) => {
+    //TODO: Refactor.
     Post.getOne(req.params.post_id)
       .then( post => {
         post.destroy()
