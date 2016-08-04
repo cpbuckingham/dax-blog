@@ -10,7 +10,7 @@
   function routeConfig($routeProvider, $locationProvider){
     $routeProvider
       .when('/auth/login',{
-        templateUrl:'/views/blog/login',
+        templateUrl:'/views/blog/login.html',
         controller:'LoginController',
         controllerAs:'login'
       })
