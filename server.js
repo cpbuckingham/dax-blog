@@ -5,6 +5,7 @@ var express        = require('express'),
     passport       = require('passport'),
     passportLocal  = require('passport-local'),
     bcrypt         = require('bcrypt'),
+    cookieSession  = require('cookie-session'),
     index          = require('./routes/index'),
     api            = require('./routes/api'),
     auth           = require('./routes/auth');
