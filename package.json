@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "bookshelf": "^0.10.0",
     "dotenv": "^2.0.0",
@@ -18,6 +19,8 @@
     "knex": "^0.11.9",
     "locus": "^1.2.0",
     "method-override": "^2.3.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "pg": "^6.0.3"
   },
   "devDependencies": {

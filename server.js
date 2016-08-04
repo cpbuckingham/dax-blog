@@ -2,7 +2,9 @@ var express        = require('express'),
     app            = express(),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
-    bookshelf      =
+    passport       = require('passport'),
+    passportLocal  = require('passport-local'),
+    bcrypt         = require('bcrypt'),
     index          = require('./routes/index'),
     api            = require('./routes/api'),
     auth           = require('./routes/auth');
@@ -15,6 +17,8 @@ app.use(bodyParser.json())
   .use(methodOverride('_method'))
   .use(express.static('public'));
 
+
+// --- Passport Strategy --- //
 
 // --- Routing --- //
 
