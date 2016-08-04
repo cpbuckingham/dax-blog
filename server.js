@@ -4,7 +4,8 @@ var express        = require('express'),
     methodOverride = require('method-override'),
     bookshelf      =
     index          = require('./routes/index'),
-    api            = require('./routes/api');
+    api            = require('./routes/api'),
+    auth           = require('./routes/auth');
 
 require('dotenv');
 
@@ -18,6 +19,7 @@ app.use(bodyParser.json())
 // --- Routing --- //
 
 app.use('/api', api)
+  .use('/auth', auth)
   .use('/', index);
 
 // --- Server --- //
