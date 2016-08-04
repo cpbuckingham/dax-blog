@@ -16,15 +16,18 @@ exports.seed = function(knex, Promise) {
             // Inserts seed entries
             knex('blogs').insert({
               blog_title: 'Seed Title 1',
-              blog_body: 'Seed Post 1'
+              blog_body: 'Seed Post 1',
+              user_id:1
             }),
             knex('blogs').insert({
               blog_title: 'Seed Title 2',
-              blog_body: 'Seed Post 2'
+              blog_body: 'Seed Post 2',
+              user_id:1
             }),
             knex('blogs').insert({
               blog_title: 'Seed Title 3',
-              blog_body: 'Seed Post 3'
+              blog_body: 'Seed Post 3',
+              user_id:1
             })
           ]);
         });

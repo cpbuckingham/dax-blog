@@ -27,10 +27,12 @@ passport.use(new LocalStrategy({
 	session: false
 }, (username, password, done) => {
 	// Check id of user, retrieve row in users table.
-	User.where('username', username)
+
+  User.where('username', username)
 		.fetch()
 		.then( user => {
-			// compareSync the user's hashed password.
+      user = user.toJSON();
+      // compareSync the user's hashed password.
 			if (user && bcrypt.compareSync(password, user.password)){
 				// On match, return confirmation of session.
 				return done(null, user);

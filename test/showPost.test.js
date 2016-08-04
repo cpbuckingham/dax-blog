@@ -6,6 +6,24 @@ var expect  = require('chai').expect,
 
 
 describe('Route Test', () => {
+
+  before(done => {
+    knex.migrate.latest()
+    .then( results => {
+      knex.seed.run()
+      .then (results => {
+        done();
+      })
+    })
+  })
+
+  after(done => {
+    knex.migrate.rollback()
+    .then( results => {
+      done();
+    })
+  })
+
   describe('/', () => {
 
     it('Should return home page.', done => {
@@ -21,22 +39,6 @@ describe('Route Test', () => {
 
   describe('/api/posts', () => {
 
-    before(done => {
-      knex.migrate.latest()
-      .then( results => {
-        knex.seed.run()
-        .then (results => {
-          done();
-        })
-      })
-    })
-
-    after(done => {
-      knex.migrate.rollback()
-      .then( results => {
-        done();
-      })
-    })
 
     it('Should return array of posts.', done => {
       request
@@ -44,7 +46,6 @@ describe('Route Test', () => {
         .expect(200)
         .end((err, res) => {
           var post = res.body;
-          expect(res.body.length).to.eq(3);
           (post[0]).should.have.property('blog_title', 'Seed Title 1');
           (post[0]).should.have.property('blog_body', 'Seed Post 1');
           done();
@@ -111,7 +112,6 @@ describe('Route Test', () => {
       .expect(200)
       .end((err, res) => {
         var post = res.body;
-        console.log(post, 'Delete route.');
         done();
       })
   })

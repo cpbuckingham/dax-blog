@@ -6,7 +6,7 @@ router.route('/login')
   .post(passport.authenticate('local', {
     failureRedirect: '/auth/login'
   }), (req, res) => {
-    res.redirect('/');
+    res.redirect('/blog');
   });
 
 module.exports = router;
