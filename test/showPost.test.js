@@ -13,9 +13,9 @@ describe('Route Test', () => {
       knex.seed.run()
       .then (results => {
         done();
-      })
-    })
-  })
+      });
+    });
+  });
 
   after(done => {
     knex.migrate.rollback()
@@ -24,7 +24,7 @@ describe('Route Test', () => {
     })
   })
 
-  describe('/', () => {
+  describe('/(index)', () => {
 
     it('Should return home page.', done => {
       request
