@@ -18,5 +18,11 @@ exports.seed = function(knex, Promise) {
           blog_body: 'Seed Post 3'
         })
       ]);
+    }).then(function(){
+      return knex('users').insert({
+        full_name:'Dax Richardson',
+        username: 'Gromkii',
+        img_url:'http://fillmurray.com/200/200'
+      })
     });
 };

@@ -1,7 +1,13 @@
 var bookshelf = require('../db/bookshelf');
 
+require('./user');
+
+
 var Post = bookshelf.Model.extend({
-  tableName:'blogs'
+  tableName:'blogs',
+  user: function(){
+    return this.belongsTo('User')
+  }
 })
 
 Post.getAll = function(){
