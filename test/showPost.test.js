@@ -21,8 +21,8 @@ describe('Route Test', () => {
     knex.migrate.rollback()
     .then( results => {
       done();
-    })
-  })
+    });
+  });
 
   describe('/(index)', () => {
 
